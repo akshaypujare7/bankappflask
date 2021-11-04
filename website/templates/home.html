@@ -1,0 +1,53 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+%}
+<h1 align="center">Account summary</h1>
+<div class = "row col-md-8 my-5">
+    <div class="card col-md-8 mx-auto px-0">
+        <div class="card-header">
+            Account summary
+        </div>
+        <div class="card-body">
+            {% if data %}
+            {% for i in data %}
+            <div class="row mb-4">
+                <table class="col-md-12">
+                    <tbody>
+                        <tr>
+                            <td>
+                                Account number
+                            </td>
+                            <td>
+                                {{ i.acc_no }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Name
+                            </td>
+                            <td>
+                                {{ i.name }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Account type
+                            </td>
+                            <td>
+                                {{ i.acc_type }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                               Balance
+                            </td>
+                            <td>
+                                {{ i.balance }}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
